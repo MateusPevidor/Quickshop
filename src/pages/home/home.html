@@ -1,0 +1,43 @@
+<!--<ion-header>
+  <ion-navbar>
+    <input type="text" placeholder="Buscar produtos" id="searchBox" name="searchBox">
+  </ion-navbar>
+</ion-header>-->
+
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-searchbar placeholder="Pesquisar produtos"
+  [(ngModel)]="myInput">
+
+</ion-searchbar>
+<br><button ion-button style="background: white; color: #1395fd;" (click)="abrirPaginaOfertas()">Ofertas</button><br>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  
+  
+
+  <div id="cardsHome">
+    <div class="cardCatalogo" *ngFor="let produto of arrayDeProdutos; let idx = index;" (click)="abrirProduto(idx)">
+      <ion-card>
+        <img class="catalogoImg" src="{{imgPaths[idx]}}"/>
+       
+        <ion-card-content>
+          <p style="text-align: right;"><span class="precoAntigo">R${{ produto.precoAntigo }}</span></p>
+          <p style="text-align: right;"><span class="precoNovo">R${{ produto.precoNovo }}</span></p>
+          <p  class="descricao">
+              {{ produto.descricao }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    
+
+  </div>
+  
+</ion-content>
+
+

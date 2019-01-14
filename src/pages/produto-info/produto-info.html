@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+      <!--<ion-title>Home</ion-title>-->
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div *ngFor="let p of produto; let idx = index;">
+      <div class="details-image"><img src="{{imagens[idx]}}"></div>
+      <div id="details-container" ng-if="data">
+        <h4 class="main-title">{{ p.descricao }}</h4>
+
+        <div class="detail-sub-plot">
+          <span class="produtoInfoPreco">R$ {{ p.precoNovo }}</span>
+        </div>
+
+        <div id="data-charts">
+        </div>
+
+        <div>
+          <span style="font-size: 16pt;">Quantidade: </span>
+          <ion-icon name="remove-circle" (click)="decrement()"></ion-icon>
+          <span style="font-size: 16pt; border: 1px solid #888888; border-radius: 3px; text-align: center; padding-right: 5px; padding-left: 5px;">{{ quantidade }}</span>
+          <ion-icon name="add-circle" (click)="increment()"></ion-icon>
+        </div>
+        <br>
+
+        <div>
+          
+          
+        </div>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-10>
+              <button ion-button style="text-transform: none; width: 100%" (click)="alertaAdicionarAoCarrinho()" [disabled]="quantidade==0">Adicionar ao Carrinho</button>
+            </ion-col>
+            <ion-col col-2>
+              <button ion-button icon-only (click)="doCheckbox()" [disabled]="quantidade==0"><ion-icon name="list"></ion-icon></button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+        
+
+      </div>
+    </div>
+  </ion-content>

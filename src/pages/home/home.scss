@@ -1,0 +1,95 @@
+#searchBox {
+    width: 97%;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: #908f94;
+    border: 0px;
+}
+
+.header {
+    background: #0000ff;
+}
+
+#searchBox:focus {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    color: #000000;
+}
+
+.cartIcon {
+    width: 5%;
+}
+
+.catalogoImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    //max-height: 200px;
+    clip: rect(0px,60px,200px,0px);
+}
+
+.precoAntigo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+    font-size: 110%;
+    text-decoration: line-through;
+    color: #acacac!important;
+}
+
+.precoNovo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+    font-size: 175%;
+}
+
+.descricao {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    color: #a0a0a0!important;
+    font-size: 90%!important;
+}
+
+.cardCatalogo {
+    display: inline-block;
+    width: 100%;
+}
+
+#cardsHome {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+@media (min-width: 460px){
+    #cardsHome {
+        grid-template-columns: 33% 33% 33%;
+    }
+}
+
+@media (min-width: 660px){
+    #cardsHome {
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+}
+
+.searchbar-clear-icon {
+    display: none !important;
+}
+
+
+/*ion-card {
+    display: flex;
+    flex-direction: column;
+    width: 48% !important;
+    margin: 5px !important;
+    
+}*/

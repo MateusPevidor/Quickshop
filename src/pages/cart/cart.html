@@ -1,0 +1,139 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Carrinho de Compras</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<div *ngIf="usuarioLogado">
+  <ion-fab right bottom style="margin-bottom: 60px;">
+    <button ion-fab color="danger" (click)="alertaApagarCarrinho()">Limpar</button>
+  </ion-fab>
+</div>
+
+
+<ion-content>
+  <div *ngIf="!usuarioLogado">
+    <img src="assets/imgs/carrinho.png" class="bodyImgCarrinho">
+    <p class="bodyText">Deseja ver o seu carrinho de compras?</p>
+    <button ion-button style="text-transform: none;" (click)="changePage()">Entrar na sua conta</button>
+  </div>
+
+  <div *ngIf="usuarioLogado">
+    <img src="assets/imgs/carrinho.png" style="width: 70%; opacity: 0.03; position: fixed; top: 50%; left: 50%; margin-left: -118px; margin-top: -165px;">
+    
+    
+
+    <div *ngIf="produtoArray != null">
+      <ion-list>
+        <ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-1>
+                  <p style="text-align: center; font-size: 100%; color: black;">Qnt.</p>
+                </ion-col>
+                <ion-col col-8>
+                  <p style="text-align: center; font-size: 100%; color: black;">Produto</p>
+                </ion-col>
+                <ion-col col-3>
+                  <p style="text-align: center; font-size: 100%; color: black;">Preço</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-item>
+        <ion-item-sliding *ngFor="let produto of produtoArray; let i = index">
+          <ion-item style="text-align: center">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-1>
+                    <p>{{ produto.qnt }}</p>
+                  </ion-col>
+                  <ion-col col-8>
+                    <p style="white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 200px;">{{ produto.descricao }}</p>
+                  </ion-col>
+                  <ion-col col-3>
+                      <p>R${{ arrayPrecoTotalString[i] }}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+          </ion-item>
+
+          <ion-item-options side="left">
+            <button ion-button color="danger" style="width: 10%" (click)="removerProduto(i)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item *ngIf="precoTotal != 0">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-9>
+                <p>Preço Total:</p>
+              </ion-col>
+              <ion-col col-3>
+                <p style="font-size: 120%; color: red;">R${{ precoTotalString }}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+
+
+    </div>
+
+    <button ion-button style="text-transform: none;" [disabled]="precoTotal == 0" (click)="comprar()">Finalizar Compra</button>
+
+  </div>
+  
+
+  
+
+  <!--<div id="cardsCart">
+    <div class="cardCatalogoCart">
+      <ion-card>
+        <img class="catalogoImgCart" src="assets/imgs/carrinho.png"/>
+        <ion-card-content>
+          <p style="text-align: right;"><span class="precoAntigo">R$23,50</span></p>
+          <p style="text-align: right;"><span class="precoNovo">R$20,50</span></p>
+          <p  class="descricaoCart">
+              descricao
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>-->
+
+  <!--<div id="catalogoCart">
+    <div id="itemCart">
+      <div id="imgCart">
+        <img src="assets/imgs/carrinho.png">
+      </div>
+      <div id="descProdutoCart">
+
+      </div>
+      <div id="qntProdutoCart">
+
+      </div>
+      <div id="precoUnitProdutoCart">
+
+      </div>
+      <div id="precoTotalProdutoCart">
+
+      </div>
+
+
+    </div>
+
+  </div>-->
+
+</ion-content>

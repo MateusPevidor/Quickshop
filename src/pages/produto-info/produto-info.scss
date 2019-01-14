@@ -1,0 +1,122 @@
+/* Empty. Add your own CSS if you like */
+a{
+	text-decoration: none;
+}
+
+i{
+    font-size: 30px;
+}
+
+
+.bold{
+	font-weight:800;
+}
+
+.detail-sub-header {
+    margin-top: -10px;
+    font-size: 12px;
+}
+
+.detail-rating {
+   	float: right;
+    margin: -20px 0 10px 40px;
+    position: relative;
+}
+
+.detail-plot {
+    margin: 20px 0;
+}
+
+
+.votes {
+    font-size: 9px;
+}
+
+.rating {
+    font-weight: 800;
+    text-align: right;
+    font-size: 20px;
+}
+
+.detail-rating i.ion-android-star {
+    position: absolute;
+    font-size: 22px;
+    right: 40px;
+    color: orange;
+}
+
+.details-image img {
+    width: 100%;
+    height: auto;
+}
+
+.details-image {
+    width: 19%;
+    display: inline-block;
+    min-width: 200px;
+}
+
+#details-container {
+    width: 65%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0% 1%;
+}
+
+#data-charts label {
+    display: inline-block;
+}
+
+div#data-charts {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+.rt-divider {
+    width: 100%;
+    margin-top: 20px;
+}
+
+img.rt-logo {
+    max-width: 100px;
+}
+
+img.rotten-img {
+    max-width: 150px;
+    margin: 20px 0 10px 0;
+}
+
+.header-search i{
+    font-size:20px;
+}
+
+.bar.bar-header.header-search {
+    position: relative;
+    top: -4px;
+}
+
+i.ion-email {
+    font-size: 25px;
+    position: relative;
+    top: 4px;
+}
+
+
+@media(max-width:420px){
+    .details-image {
+        width: 100%;
+    }
+    #details-container {
+        width: 100%;
+    }
+}
+
+.produtoInfoPreco {
+    color: #b30000;
+    font-weight: 800;
+    font-size: 150%;
+}
+
+ion-icon {
+    font-size: 22px; //Preferred size here
+}

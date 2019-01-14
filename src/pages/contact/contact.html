@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Entregas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <br><br><br>
+  <div *ngIf="!usuarioLogado">
+    <img src="assets/imgs/caminhao.png" class="bodyImgAviso">
+    <p class="bodyText">Deseja acompanhar as suas entregas?</p>
+    <button ion-button style="text-transform: none;" (click)="changePage()">Entrar na sua conta</button>
+  </div>
+
+  <div *ngIf="usuarioLogado">
+      <img src="assets/imgs/caminhao.png" class="bodyImgAviso">
+      <p class="bodyText">Você não possui nenhuma entrega pendente.</p>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,43 @@
+<!--
+  PAGINA DO MENU DE CONFIGS
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Minha Conta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-list no-lines>
+      <ion-item>
+        <p id="cabecalho">
+            Configuração
+        </p>
+        <button ion-item (click)="entrarAjustes()">
+          <ion-icon name='cog' item-start></ion-icon>
+          Ajustes
+        </button>
+        <div *ngIf="!usuarioLogado">
+          <hr>
+          <button ion-item (click)="entrarLogin()">
+            <ion-icon name='person' item-start></ion-icon>
+            Acessar sua Conta
+          </button>
+        </div>
+        <div *ngIf="usuarioLogado">
+          <hr>
+          <button ion-item (click)="logout()">
+            <ion-icon name='exit' item-start></ion-icon>
+            Sair
+          </button>
+        </div>
+      </ion-item>    
+    </ion-list>
+
+
+
+</ion-content>

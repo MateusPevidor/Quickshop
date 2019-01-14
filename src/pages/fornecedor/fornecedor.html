@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <form [formGroup]="form">
+
+    <ion-item>
+      <ion-label stacked>Descrição</ion-label>
+      <ion-input type="text" formControlName="descricao"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.descricao.valid && (form.controls.descricao.dirty || form.controls.descricao.touched)" color="danger">
+      <div [hidden]="!form.controls.descricao.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Preço Antigo</ion-label>
+      <ion-input type="text" formControlName="precoAntigo"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.precoAntigo.valid && (form.controls.precoAntigo.dirty || form.controls.precoAntigo.touched)" color="danger">
+      <div [hidden]="!form.controls.precoAntigo.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Preço Novo</ion-label>
+      <ion-input type="text" formControlName="precoNovo"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.precoNovo.valid && (form.controls.precoNovo.dirty || form.controls.precoNovo.touched)" color="danger">
+      <div [hidden]="!form.controls.precoNovo.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Caminho Imagem</ion-label>
+      <ion-input type="text" formControlName="imgPath"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.imgPath.valid && (form.controls.imgPath.dirty || form.controls.imgPath.touched)" color="danger">
+      <div [hidden]="!form.controls.imgPath.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Salvar</button>
+    </div>
+
+
+  </form>
+
+
+
+</ion-content>

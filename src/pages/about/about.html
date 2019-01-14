@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Listas de Compras
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="!usuarioLogado">
+      <br><br><br>
+      <img src="assets/imgs/lista.png" class="bodyImgList">
+      <p class="bodyText">Deseja ver as suas listas de compras?</p>
+      <button ion-button style="text-transform: none;" (click)="changePage()">Entrar na sua conta</button>
+    </div>
+
+    <div *ngIf="usuarioLogado">
+      <img src="assets/imgs/lista.png" style="opacity: 0.03; position: fixed; top: 50%; left: 50%; margin-left: -110px; margin-top: -165px;">
+
+
+
+      <ion-list>
+        <ion-item-sliding *ngFor="let lista of listas | async">
+          <ion-item>
+            <ion-icon name="cart" item-start color="primary"></ion-icon>
+            <ion-label>{{ lista.nomeLista.nome }}</ion-label>
+            <button ion-button item-end style="width: 35%;" (click)="confirmarCompraLista(lista)">Comprar</button>
+          </ion-item>
+
+          <ion-item-options side="left">
+            <button ion-button color="secondary" style="width: 10%" (click)="editarLista(lista)">
+              <ion-icon name="create"></ion-icon>
+            </button>
+            <button ion-button color="danger" style="width: 10%" (click)="removerLista(lista.key, lista.nomeLista.nome)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+      
+      <button ion-button style="text-transform: none;" (click)="novaLista()">Adicionar nova Lista de Compras</button>
+
+    </div>
+
+</ion-content>
